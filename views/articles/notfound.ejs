@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blog</title>
+</head>
+<body>
+    <div class='container'>
+        <h1 class="mb-4">Not Found</h1>
+        <a href="/article/new" class="btn btn-success">New Article</a>
+
+        <% articles.forEach(article=> { %>
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <%= article %>
+                    </h4>
+                    <a href="articles/" class="btn btn-success">Back Home</a>
+                 </div>
+            </div>
+            <% }) %>
+    </div>
+</body>
+
+</html>

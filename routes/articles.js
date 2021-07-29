@@ -34,8 +34,7 @@ router.delete('/:id', async(req, res) => {
 
 // Not Found Page
 router.get("*", (req, res) => {
-  res.render('articles/notfound', { article: "Not Found"})
-  res.redirect(`/articles/${article.slug}`)
+  res.render('articles/notfound', { articles: "Not Found"})
 });
 
 function saveArticleAndRedirect(path){
