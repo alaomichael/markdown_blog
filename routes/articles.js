@@ -3,7 +3,17 @@ const Article = require('./../models/article')
 const router = express.Router();
 
 router.get("/new", (req, res) => {
-  res.render('articles/new', { article: new Article()})
+  // res.render('articles/new', { article: new Article()})
+  const article = [{
+    title: "New article",
+    description:"This is the article description",
+    markdown:"markup"
+  },{
+    title: "New article 2",
+    description:"This is the article description 2",
+    markdown:"markup 2"
+  }]
+  res.render('articles/new', { article: article})
 });
 
 router.get("/edit/:id", async (req, res) => {
@@ -33,9 +43,9 @@ router.delete('/:id', async(req, res) => {
 })
 
 // Not Found Page
-router.get("*", (req, res) => {
-  res.render('articles/notfound', { articles: "Not Found"})
-});
+// router.get("*", (req, res) => {
+//   res.render('articles/notfound', { article: "Not Found"})
+// });
 
 function saveArticleAndRedirect(path){
   return async (req, res) => {

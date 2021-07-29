@@ -26,4 +26,9 @@ res.render('articles/index', {articles: articles});
 
 app.use('/articles', articleRouter)
 
+// Not Found Page
+app.get("*", (req, res) => {
+  res.render('articles/notfound', { article: "Not Found"})
+});
+
 app.listen(port, () => `Server running on port ${port} 🔥`);
